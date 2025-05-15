@@ -10,10 +10,9 @@ func InitViper(conf any, path ...string) *viper.Viper {
 	return initialize.Viper(conf, path...) // 初始化Viper
 }
 
-//func InitViperWithConf(conf any, path ...string) *viper.Viper {
-//	// init viper
-//	v := initialize.Viper(&kg.C, path...) // 初始化Viper
-//	initialize.Viper(conf, path...)       // 初始化Viper
-//
-//	return v
-//}
+func InitViperWithConf(conf1 any, conf2 any, path ...string) *viper.Viper {
+	v := initialize.Viper(conf1, path...) // 初始化Viper
+	initialize.Viper(conf2, path...)      // 初始化Viper
+
+	return v
+}
